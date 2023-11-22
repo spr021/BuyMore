@@ -1,9 +1,13 @@
-import "./globals.scss"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import classes from './page.module.scss'
+import classes from "./layout.module.scss"
+import "./app.css"
+import { Roboto } from "next/font/google"
+import MenuItem from "@/components/menu-item"
 
-const inter = Inter({ subsets: ["latin"] })
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: "400",
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,8 +20,30 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={roboto.className}>
+      <body className={classes.body}>
+        <nav className={classes.nav}>
+          <span className={classes.logo}>
+            Buy<span className={classes.logo_m}>M</span>ore
+          </span>
+          <div className={classes.menu}>
+            <MenuItem hasHover logo="/img/icons/lightning.svg">Popular Products</MenuItem>
+            <MenuItem hasHover logo="/img/icons/explor.svg">Explor New</MenuItem>
+            <MenuItem hasHover logo="/img/icons/cart.svg">Clothing and Shoes</MenuItem>
+            <MenuItem hasHover logo="/img/icons/gift-box.svg">Gifts and Living</MenuItem>
+            <hr />
+            <span>Quick actions</span>
+            <MenuItem size='small' logoBackground logo="/img/icons/plus.svg">Request for product</MenuItem>
+            <MenuItem size='small' logoBackground logo="/img/icons/plus.svg">Add member</MenuItem>
+            <hr />
+            <span>Last Order</span>
+            <MenuItem size='small' bigIcon logo="/img/adidas.jpg">adidas</MenuItem>
+            <MenuItem size='small' bigIcon logo="/img/shirt.jpeg">NASA</MenuItem>
+            <span>See all</span>
+          </div>
+        </nav>
+        <main className={classes.main}>{children}</main>
+      </body>
     </html>
   )
 }
