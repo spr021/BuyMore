@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import classes from "./layout.module.scss"
 import "./app.css"
 import { Roboto } from "next/font/google"
-import MenuItem from "@/components/menu-item"
+import MenuItem from "../components/menu-item"
 
 const roboto = Roboto({
   subsets: ["latin"],
