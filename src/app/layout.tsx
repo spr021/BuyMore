@@ -27,18 +27,34 @@ export default function RootLayout({
             Buy<span className={classes.logo_m}>M</span>ore
           </span>
           <div className={classes.menu}>
-            <MenuItem hasHover logo="/img/icons/lightning.svg">Popular Products</MenuItem>
-            <MenuItem hasHover logo="/img/icons/explor.svg">Explor New</MenuItem>
-            <MenuItem hasHover logo="/img/icons/cart.svg">Clothing and Shoes</MenuItem>
-            <MenuItem hasHover logo="/img/icons/gift-box.svg">Gifts and Living</MenuItem>
+            <MenuItem hasHover logo="/img/icons/lightning.svg">
+              Popular Products
+            </MenuItem>
+            <MenuItem hasHover logo="/img/icons/explor.svg">
+              Explor New
+            </MenuItem>
+            <MenuItem hasHover logo="/img/icons/cart.svg">
+              Clothing and Shoes
+            </MenuItem>
+            <MenuItem hasHover logo="/img/icons/gift-box.svg">
+              Gifts and Living
+            </MenuItem>
             <hr />
             <span>Quick actions</span>
-            <MenuItem size='small' logoBackground logo="/img/icons/plus.svg">Request for product</MenuItem>
-            <MenuItem size='small' logoBackground logo="/img/icons/plus.svg">Add member</MenuItem>
+            <MenuItem size="small" logoBackground logo="/img/icons/plus.svg">
+              Request for product
+            </MenuItem>
+            <MenuItem size="small" logoBackground logo="/img/icons/plus.svg">
+              Add member
+            </MenuItem>
             <hr />
             <span>Last Order</span>
-            <MenuItem size='small' bigIcon logo="/img/adidas.jpg">adidas</MenuItem>
-            <MenuItem size='small' bigIcon logo="/img/shirt.jpeg">NASA</MenuItem>
+            <MenuItem size="small" bigIcon logo="/img/adidas.jpg">
+              adidas
+            </MenuItem>
+            <MenuItem size="small" bigIcon logo="/img/shirt.jpeg">
+              NASA
+            </MenuItem>
             <span>See all</span>
           </div>
         </nav>
