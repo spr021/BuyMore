@@ -1,8 +1,7 @@
 import type { Metadata } from "next"
-import classes from "./layout.module.scss"
-import "./app.css"
+import "./globals.css"
 import { Roboto } from "next/font/google"
-import MenuItem from "../components/menu-item"
+import { MenuItem, MenuPath } from "../components/menu-item"
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -21,44 +20,42 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={roboto.className}>
-      <body className={classes.body}>
-        <nav className={classes.nav}>
-          <span className={classes.logo}>
-            Buy<span className={classes.logo_m}>M</span>ore
+      <body className="flex min-h-screen m-0 box-border">
+        <nav className="flex flex-col w-72 p-4 border-r-[1px] border-stone-200">
+          <span className="font-semibold text-2xl m-4">
+            Buy<span className="border-b-[3px] border-blue-800">M</span>ore
           </span>
-          <div className={classes.menu}>
-            <MenuItem hasHover logo="/img/icons/lightning.svg">
+          <div className="flex items-start justify-start flex-col h-full mt-9 mx-4">
+            <MenuPath logo="/img/icons/lightning.svg">
               Popular Products
+            </MenuPath>
+            <MenuPath logo="/img/icons/explor.svg">Explor New</MenuPath>
+            <MenuPath logo="/img/icons/cart.svg">Clothing and Shoes</MenuPath>
+            <MenuPath logo="/img/icons/gift-box.svg">Gifts and Living</MenuPath>
+            <hr className="w-full my-4 h-[1px] bg-stone-200 border-none" />
+            <span className="font-semibold text-sm text-slate-400 pl-4">
+              Quick actions
+            </span>
+            <MenuItem logo="/img/icons/plus.svg">Request for product</MenuItem>
+            <MenuItem logo="/img/icons/plus.svg">Add member</MenuItem>
+            <hr className="w-full my-4 h-[1px] bg-stone-200 border-none" />
+            <span className="font-semibold text-sm text-slate-400 pl-4">
+              Last Order
+            </span>
+            <MenuItem logo="/img/adidas.png">adidas</MenuItem>
+            <MenuItem logo="/img/shirt.png">NASA</MenuItem>
+            <span className="mt-2 font-semibold text-sm text-slate-400 pl-4">
+              See all
+            </span>
+            <MenuItem
+              className="mt-auto font-semibold"
+              logo="/img/icons/logout.svg"
+            >
+              Log Out
             </MenuItem>
-            <MenuItem hasHover logo="/img/icons/explor.svg">
-              Explor New
-            </MenuItem>
-            <MenuItem hasHover logo="/img/icons/cart.svg">
-              Clothing and Shoes
-            </MenuItem>
-            <MenuItem hasHover logo="/img/icons/gift-box.svg">
-              Gifts and Living
-            </MenuItem>
-            <hr />
-            <span>Quick actions</span>
-            <MenuItem size="small" logoBackground logo="/img/icons/plus.svg">
-              Request for product
-            </MenuItem>
-            <MenuItem size="small" logoBackground logo="/img/icons/plus.svg">
-              Add member
-            </MenuItem>
-            <hr />
-            <span>Last Order</span>
-            <MenuItem size="small" bigIcon logo="/img/adidas.jpg">
-              adidas
-            </MenuItem>
-            <MenuItem size="small" bigIcon logo="/img/shirt.jpeg">
-              NASA
-            </MenuItem>
-            <span>See all</span>
           </div>
         </nav>
-        <main className={classes.main}>{children}</main>
+        <main className="flex flex-1">{children}</main>
       </body>
     </html>
   )
